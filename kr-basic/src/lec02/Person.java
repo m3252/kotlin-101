@@ -1,4 +1,4 @@
-package com.basic.lec02;
+package lec02;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

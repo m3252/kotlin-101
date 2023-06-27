@@ -1,4 +1,4 @@
-package com.basic.lec01
+package lec01
 
 class Person(s: String) {
 

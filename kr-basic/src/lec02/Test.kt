@@ -1,4 +1,4 @@
-package com.basic.lec02
+package lec02
 
 fun main() {
     startsWithA1("AA")
