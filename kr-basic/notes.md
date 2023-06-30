@@ -113,3 +113,108 @@
     - 객체 연산
   - equals : == 
   - same : ===
+
+
+### 5. 제어문
+
+--- 
+
+- if문은 자바와 같다.
+  - ```kotlin
+    if (number > 0) {
+        println("1")
+    } else if (number < 0) {
+        println("2")
+    } else {
+        println("else")
+    }
+    ```
+  - 단 자바의 statement와는 달리 expression으로 취급되기에 삼항 연산자가 없다. 
+    - ```kotlin
+      fun getGrade(score: Int): String {
+        return if (score >= 90) {
+          "A"
+        } else if (score >= 80) {
+          "B"
+        } else if (score >= 70) {
+          "C"
+        } else if (score >= 60) {
+          "D"
+        } else {
+          "F"
+        }
+      }
+      ```
+- switch 대신 when을 사용한다.
+  - ```kotlin
+    when (number) {
+        1 -> println("1")
+        2 -> println("2")
+        else -> println("else")
+    }
+    ```
+  - ```kotlin
+    when (number) {
+        in 1..10 -> println("1")
+        in 11..20 -> println("2")
+        else -> println("else")
+    }
+    ```
+  - ```kotlin
+    when (number) {
+        is Int -> println("Int")
+        is Long -> println("Long")
+        else -> println("else")
+    }
+    ```
+  - ```kotlin
+    when {
+        number > 0 -> println("1")
+        number < 0 -> println("2")
+        else -> println("else")
+    }
+    ```
+    
+
+### 6. 반복문
+
+--- 
+- while, do-while문은 자바와 같다.
+  - ```kotlin
+    while (number > 0) {
+        println(number)
+        number--
+    }
+    ```
+  - ```kotlin
+    do {
+        println(number)
+        number--
+    } while (number > 0)
+    ```
+- for문은 표현이 다르다.
+  - ```kotlin
+    for (i in 1..10) {
+        println(i)
+    }
+    ```
+  - ```kotlin
+    for (i in 10 downTo 1) {
+        println(i)
+    }
+    ```
+  - ```kotlin
+    for (i in 1..10 step 2) {
+        println(i)
+    }
+    ```
+  - ```kotlin
+    for (i in 10 downTo 1 step 2) {
+        println(i)
+    }
+    ```
+  - ```kotlin
+    for (i in 1 until 10) {
+        println(i)
+    }
+    ```
