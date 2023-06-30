@@ -27,7 +27,7 @@
     ```
 
 
-### 2. Null 다루기
+### 2. Null Safety
 
 --- 
 
@@ -56,3 +56,60 @@
       println(number!!.toString())
       ```
 
+### 3. Type 변환
+
+--- 
+
+- 자바와 달리 타입변환을 명시해줘야 한다.
+  - ```kotlin
+    val number1 : Int? = 3
+    val number2: Long = number1?.toLong() ?: 0L
+    
+    val number3 = 3
+    val result = number1 / number3.toDouble()
+    ```
+- 자바의 `instansof`와 같은 기능을 하는 `is` 키워드가 있다.
+  - ```kotlin
+    val number1 : Int? = 3
+    if(number1 is Int) {
+        println("number1 is Int")
+    }
+    ```
+- 스마트 캐스트인 as 키워드를 지원하지만 생략 가능하다.
+  - ```kotlin
+    val number1 : Int? = 3
+    val number2: Long = number1 as Long
+    val number3: Long = number1
+    ```    
+  - as? 키워드를 사용하면 타입 변환이 불가능한 경우 null을 반환한다.
+
+- Any, Unit, Nothing 
+  - Any : 모든 타입의 조상 타입
+  - Unit : Java의 void와 같은 타입
+  - Nothing : 정상적으로 끝나지 않는 함수를 표시
+
+- String interpolation / String indexing
+  - ```kotlin
+    val text = "아아아 ${person.name}"
+    ```
+  - ```kotlin
+    val str = 
+    """
+    ABC
+    EDF
+    """.trimIndent()
+    ```
+  - ```kotlin
+    println(text[5])
+    ```
+
+### 4. 연산자
+
+---
+- 단항, 산술, 산술 대입 연산자는 자바와 같다.
+- 특정 연산자를 기호에 맞게 사용할 수 있다.
+  - compareTo : >
+  - plus : + 
+    - 객체 연산
+  - equals : == 
+  - same : ===
